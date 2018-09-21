@@ -6,71 +6,32 @@ public class prj10
 {
 	public static void main(String[] args) 
 	{
-		long sum = 0;
+		long sum = 2;
 		
-		int limit = 2000000;
-		
-		ArrayList<Integer> primes = getPrimesTo(limit - 1);
-		
-		for(int i = 0; i < primes.size(); i++)
+		for(long i = 3; i<2000000; i+=2)
 		{
-			sum += primes.get(i);
+			if(isPrime(i))
+				sum+=i;
 		}
-		System.out.println("Sum of primes below 2 millon : "+sum);
+		
+		System.out.println(sum);
+		
+		
 	}
 
-	static ArrayList<Integer> getPrimesTo(int limit) 
+	private static boolean isPrime(long i) 
 	{
-		ArrayList<Integer> result = new ArrayList();
+		boolean res = true;
 		
-		boolean[] notPrimes = new boolean[limit - 1];
-		
-		int max = (int)Math.sqrt(limit);
-		
-		for(int i = 0; i <= max; i++)
+		for(long a = 2; a<i; a++)
 		{
-			if(notPrimes[i] != true)
+			if(i % a == 0)
 			{
-				int number = i+2;
-				
-				if(isPrimeNumber(number))
-				{
-					for(int j = 2; j*number - 2 < notPrimes.length; j++)
-					{
-						notPrimes[j*number - 2] = true;
-						
-					}
-				}
-				else
-				{
-					notPrimes[i] = true;
-				}
-			}
-			
-		}
-		
-		for(int i = 0; i<notPrimes.length; i++)
-		{
-			if(!notPrimes[i])
-			{
-				result.add(i+2);
-			}
-		}
- 		return result;
-	}
-
-	static boolean isPrimeNumber(int number) 
-	{
-		boolean result = true;
-		
-		for(int i = 2; i< number; i++)
-		{
-			if(number%i == 0)
-			{
-				result = false;
+				res = false;
 				break;
 			}
 		}
-		return result;
+		
+		return res;
 	}
 }
