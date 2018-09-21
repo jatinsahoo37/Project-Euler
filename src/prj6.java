@@ -10,16 +10,13 @@ public class prj6
 	{
 		int soS = 0;
 		int Sos = 0;
-		int sum = 0;
 		
-		for(int i = 0; i <=100; i++)
+		for(int i = 1; i <=100; i++)
 		{
-			soS += (i*i);
-			sum += i; 
+			Sos += i;
+			soS += i*i; 
 		}
 		
-		Sos = sum*sum;
-		
-		System.out.println("Difference = "+(Sos - soS));	
+		System.out.println(Sos * Sos - soS);	
 	}
 }
