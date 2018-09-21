@@ -9,7 +9,7 @@ public class prj7
 			 if(isPrime(i))
 				 j++;
 		 }
-		 System.out.println("The 10001st prime number is: "+(i - 1));
+		 System.out.println(i - 1);
 	}
 
 	static boolean isPrime(int a) 
