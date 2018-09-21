@@ -11,7 +11,6 @@ public class prj1
 				sum+=i;
 		}
 		
-		System.out.println("The sum is : "+sum);
-
+		System.out.println(sum);
 	}
 }
