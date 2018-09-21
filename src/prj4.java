@@ -4,39 +4,43 @@ public class prj4
 {
 	public static void main(String[] args) 
 	{
-		int maxPalindrome = 0;
-
-		int i = 0;
-		int j = 0;
+		int maxPalin = 0;
 		
-		for(i = 999; i > 999; i--)
+		for(int i = 100; i<1000; i++)
 		{
-			for(j = 999; j>=i; j--)
+			for(int j = 100; j<= 1000; j++)
 			{
 				int p = i*j;
 				
-				int n = p;
-				int rev = 0;
-				
-				while(n>0)
+				if(isPalindrome(p) && p > maxPalin)
 				{
-					int rem = n%10;
-					rev = rev*10 + rem;
-					n = n/10;
-				}
-				
-				if(rev == p)
-				{
-					maxPalindrome = p;
+					maxPalin = p;
 					
-					System.out.println("the largest palindrome is: "+i+" x "+j+" = "+maxPalindrome);
-					break;
 				}
-								
 			}
-			if(maxPalindrome != 0)
-				break;
-			
-		}	
+		}
+		
+		System.out.println(maxPalin);
+	}
+
+	
+	private static boolean isPalindrome(int p) 
+	{
+		int n = p;
+		int rev = 0;
+		
+		while(n>0)
+		{
+			int rem = n%10;
+			rev = rev*10 + rem;
+			n = n/10;
+		}
+		
+		if(p == rev)
+		{
+			return true;
+		}
+		return false;
+		
 	}
 }
