@@ -13,11 +13,7 @@ public class prj9
 				int c = abc - a - b;
 				
 				if(a*a + b*b == c*c)
-				{
-					System.out.println("Sum = ("+a+" + "+b+" + "+c+") = "+(a+b+c));
-					
-					System.out.println("Product of abc: "+(a*b*c));
-				}
+					System.out.println(a*b*c);
 			}
 		}
 	}
