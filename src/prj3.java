@@ -8,30 +8,29 @@ public class prj3
 		
 		long a = n;
 		long b = 0;
-		
-		String result = "";
-		
-		do {
-			b = a;
-			for (int i = 2; i <= Math.sqrt(a); i++) 
+		while(true)
+		{
+			long p = smallestFactor(n);
+			if(p<n)
+				n /= p;
+			else
+				System.out.println(n);
+		}
+	}
+
+	private static long smallestFactor(long n) 
+	{
+		if (n <= 1)
+			throw new IllegalArgumentException();
+			
+		for(long i = 2, e = (long) Math.sqrt(n); i<=e;i++)
+		{
+			if(n%i==0)
 			{
-				if (a%i == 0) {
-					b = i;
-					break;
-				}
+				n = i;
 			}
-			System.out.println("The largest prime factors of "+n+" is : "+b);
-			
-			result += b+" x ";
-			
-			if(b<a)
-				a = a/b;
-		
-		}while(b<a);
-		
-		String print = result.substring(0, result.length() - " x ".length());
-		
-		System.out.println(print + " = " +n);
+		}
+		return n;
 	}
 	
 	
