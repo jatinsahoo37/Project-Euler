@@ -10,13 +10,13 @@ public class prj2
 		while(a <=4000000)
 		{
 			if(a%2 == 0)
-				n=n+a;
+				n+=a;
 			
-			int c = a;
-			a = a+b;
+			int c = a+b;
+			a = b;
 			b = c;
 			
 		}
-		System.out.println("The sum of the even fibonacci series under 4 million is :" +n);
+		System.out.println(n);
 	}
 }
